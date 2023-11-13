@@ -1,0 +1,6 @@
+ARG TAG=latest
+FROM comm-build:${TAG} As production
+
+WORKDIR /opt/comm
+
+CMD npm run start:prod

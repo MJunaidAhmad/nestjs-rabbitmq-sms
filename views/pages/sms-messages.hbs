@@ -1,0 +1,89 @@
+{{#> mainLayout}}
+  {{#*inline "content"}}
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>SMS Messages</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">SMS Messages</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">SMS Messages</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead>
+                  <tr>
+                    <!--                  <th style="width: 10px">#</th>-->
+                    <th>Phone Number</th>
+                    <th>Text</th>
+                    <th>Status</th>
+                    <th>Consumer Service</th>
+                    <th>Provider</th>
+                    <th>Created At</th>
+                    <!--                  <th style="width: 40px">Label</th>-->
+                  </tr>
+                  </thead>
+                  <tbody>
+                    {{#each messages.data}}
+                      <tr>
+                        <td>{{this.message.phoneNumber}}</td>
+                        <td>{{this.message.text}}</td>
+                        <td>{{this.status}}</td>
+                        <td>{{this.service}}</td>
+                        <td>{{this.provider}}</td>
+                        <td>{{{formatDate this.createdAt}}}</td>
+                      </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              <div class="card-footer clearfix">
+                <ul class="pagination pagination-sm m-0 float-right">
+                  {{#gt messages.page 1}}
+                    <li class="page-item">
+                      <a class="page-link" href="/portal/sms?page={{minus messages.page 1}}">
+                      &laquo; previous
+                      </a>
+                    </li>
+
+                  {{/gt}}
+                  {{#lt messages.page messages.lastPage}}
+                    <li class="page-item">
+                      <a class="page-link" href="/portal/sms?page={{plus messages.page 1}}">
+                      &raquo; next
+                      </a>
+                    </li>
+                  {{/lt}}
+
+<!--                    <li class="page-item"><a class="page-link" href="#">2</a></li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">3</a></li>-->
+<!--                    <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>-->
+                </ul>
+              </div>
+            </div>
+            <!-- /.card -->
+          </div>
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+  {{/inline}}
+{{/mainLayout}}

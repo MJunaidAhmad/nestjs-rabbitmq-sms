@@ -1,0 +1,10 @@
+FROM node:16.0.0-alpine As build
+WORKDIR /opt/comm
+
+COPY . .
+
+RUN npm install
+
+RUN npm run build
+
+RUN rm .npmrc

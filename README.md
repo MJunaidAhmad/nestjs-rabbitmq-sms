@@ -1,4 +1,3 @@
-[![Build Status](https://jenkins.cassbana.com/buildStatus/icon?job=project-x%2Fproject-x-communication%2Fdevelop&subject=backend%20status)](https://jenkins.cassbana.com/job/project-x/job/project-x-backend/job/develop/)
 
 # Welcome to Communication Service!
 
@@ -16,12 +15,6 @@ For the project to run locally you need to have following installations
 5. NodeJS (https://nodejs.org/en/download/)
 6. NPM (Gets install with NodeJS)
 
-## Login to NPM
-First cause @cassbana packages are private, you need to authorize npm to this namespace.
-just create .npmrc file with the following content and replace YOUR_GITHUB_ACCESS_TOKEN
-
-    @cassbana:registry=https://npm.pkg.github.com
-    //npm.pkg.github.com/:_authToken=YOUR_GITHUB_ACCESS_TOKEN
 
 ## Build Project
 
@@ -52,7 +45,7 @@ You can also find the environment file at (./apps/communication/.local.env)
     SMS_PROVIDER_AUTH_TYPE=apiKey
     SMS_PROVIDER_BASE_HOST=api.infobip.com
     SMS_PROVIDER_API_KEY=
-    SMS_PROVIDER_SENDER_ID=Cassbana
+    SMS_PROVIDER_SENDER_ID=test
     RABBITMQ_SMS_EXCHANGE=ex.sms
     RABBITMQ_SMS_FAILURE_EXCHANGE=ex.sms.failure
     RABBITMQ_SMS_FAILURE_EXCHANGE_ROUTING=error
@@ -66,7 +59,7 @@ You can also find the environment file at (./apps/communication/.local.env)
 
     SMS_CEQUENS_BASE_HOST=apis.cequens.com
     SMS_CEQUENS_API_KEY=
-    SMS_CEQUENS_USER_NAME=Cassbana
+    SMS_CEQUENS_USER_NAME=test
 
 # Run Services Locally without Docker
 
